@@ -8,18 +8,7 @@ services:
     volumes:
       - ./:/app
     environment:
-      MYSQL_HOST: mysql
-      MYSQL_USER: root
-      MYSQL_PASSWORD: secret
+      MYSQL_HOST: <RDS-endpoint>
+      MYSQL_USER: <RDS-username>
+      MYSQL_PASSWORD: <RDS-password>
       MYSQL_DB: todos
-
-  mysql:
-    image: mysql:8.0
-    volumes:
-      - todo-mysql-data:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: todos
-
-volumes:
-  todo-mysql-data:
